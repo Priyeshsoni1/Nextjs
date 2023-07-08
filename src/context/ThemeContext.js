@@ -9,11 +9,19 @@ export const ThemeProvider = ({children}) => {
 
    const toggle = () => {
     
-      setMode((prev) => (prev === "dark" ? "light" : "dark"));
+    if (mode === "dark") {
+      setMode("light");
+      localStorage.setItem("mode", "light");
+   } else {
+      setMode("dark");
+      localStorage.setItem("mode", "dark");
+   }
       
    };
 
-   
+   useEffect(() => {
+    setMode(localStorage.getItem("mode"));
+ }, [mode]);
 
    return (
       <ThemeContext.Provider value={{toggle, mode}}>
