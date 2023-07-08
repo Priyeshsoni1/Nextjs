@@ -17,6 +17,7 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData();
+  console.log(data);
   return (
     <div className={styles.mainContainer}>
       {data.map((item) => (
@@ -24,7 +25,7 @@ const Blog = async () => {
           <div className={styles.imageContainer}>
             <Image
               src="/illustration.png"
-              alt=""
+              alt="image"
               width={400}
               height={250}
               className={styles.image}

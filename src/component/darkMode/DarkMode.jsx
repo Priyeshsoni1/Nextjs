@@ -6,7 +6,7 @@ import { useStore } from 'zustand';
 const DarkMode = () => {
   
   const {mode,toggle}=useContext(ThemeContext);
-    console.log(mode)
+    // console.log(mode)
   return (
    
     <div className={styles.container} onClick={toggle}>
